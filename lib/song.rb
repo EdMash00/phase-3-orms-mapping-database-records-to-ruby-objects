@@ -49,4 +49,12 @@ class Song
     song.save
   end
 
+  def self.all
+    sql = <<-SQL
+      SELECT *
+      FROM songs
+    SQL
+
+    DB[:conn].execute(sql)
+  end
 end
